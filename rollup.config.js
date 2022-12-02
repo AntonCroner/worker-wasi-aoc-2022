@@ -6,6 +6,7 @@ import { nodeResolve } from "@rollup/plugin-node-resolve"
 import commonjs from "@rollup/plugin-commonjs"
 import typescript from "@rollup/plugin-typescript"
 import json from "@rollup/plugin-json"
+import { wasm } from '@rollup/plugin-wasm'
 import path from "path"
 
 export default {
@@ -17,7 +18,7 @@ export default {
     sourcemap: true,
 		sourcemapPathTransform: relativeSourcePath => path.resolve(__dirname, relativeSourcePath.replace(/^(..\/)+/, "")),
   },
-  plugins: [commonjs(), nodeResolve({ browser: true }), terser(), typescript({ resolveJsonModule: true }), json()],
+  plugins: [commonjs(), nodeResolve({ browser: true }), terser(), typescript({ resolveJsonModule: true }), json(), wasm({targetEnv: "browser"})],
 	watch: {
 		clearScreen: false,
 	},

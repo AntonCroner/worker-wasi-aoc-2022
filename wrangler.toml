@@ -3,12 +3,14 @@ name = "worker-template"
 workers_dev = true
 routes = []
 vars = { }
-main = "./dist/_worker.js"
-
+#main = "./dist/_worker.js"
+main = "./index.ts"
 
 [build]
 command = "npm install && npm run build"
-upload.format = "modules"
+
+[build.upload]
+format = "modules"
 
 [env.production]
 workers_dev = false
