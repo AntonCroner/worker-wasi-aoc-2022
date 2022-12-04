@@ -8,13 +8,13 @@ LIBS =
 OBJS = main.o
 WASM = *.wasm
 
-day_1: day_1a day_1b
+day_2: day_2a day_2b
 
-day_1a: day_1a.c
-	$(CC) $(CFLAGS) day_1a.c -o day_1a.wasm
+day_2a: day_2a.c
+	$(CC) $(CFLAGS) day_2a.c -o day_2a.wasm
 
-day_1b: day_1b.c
-	$(CC) $(CFLAGS) day_1b.c -o day_1b.wasm
+day_2b: day_2b.c
+	$(CC) $(CFLAGS) day_2b.c -o day_2b.wasm
 
 clean:
 	rm -f $(EXECUTABLE) $(OBJS) $(WASM) *~
